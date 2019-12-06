@@ -1,3 +1,5 @@
+""" Viewsets module """
+
 from rest_framework import viewsets
 from django.contrib.auth.models import User, Group
 # from . serializers import UserSerializer, GroupSerializer
@@ -18,4 +20,5 @@ class GroupViewSet(viewsets.ModelViewSet):
     API endpoint that allows groups  to be viewed or edited.
     """
     queryset = Group.objects.all()
-    serializer_class = GroupSerializer 
+    serializer_class = GroupSerializer
+
