@@ -33,14 +33,13 @@ router.register('groups', GroupViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-rest/', include(router.urls)),
-    path(
-        'api-auth/', include(
-                    'rest_framework.urls', 
-                    namespace='rest_framework'
-                )
-    ),
     path('', resthome, name='url_home'),
+    path('api-rest/', include(router.urls)),
+    path('api-auth/', 
+        include(
+            'rest_framework.urls', 
+            namespace='rest_framework'
+        )
+    ),
 ]
-
 

@@ -17,7 +17,7 @@ def resthome(request):
     pass
     data = {}
     data['wm'] = 'IDELFRIDES JORGE WM'
-    data['title'] = 'Home | Django REST '
+    data['title'] = 'Home | Django OAuth Toolkit '
     return render(request, 'resthome.html', data)
 
 
@@ -51,7 +51,7 @@ def get_token(request):
     
     data = {}
     data['wm'] = 'IDELFRIDES JORGE'
-    data['title'] = 'Home | Django REST OAUTH2 '
+    data['title'] = 'Home | Django OAuth Toolkit'
     data['token'] = token
     return render(request, 'token.html', data)
     

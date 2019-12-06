@@ -40,5 +40,5 @@ urlpatterns = [
             namespace='rest_framework'
         )
     ),
-    # ...
+    
 ]
