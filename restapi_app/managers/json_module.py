@@ -11,51 +11,59 @@
 
 """
 
-import os
-import glob
-import json
+from textwrap import dedent
+from os.path import realpath, dirname
+import json, os
+
 
 class ManageAuthentication(object):
     
     def __init__(self):
         pass
 
-    def solve_json_file(self, path_to_file):
+    def solve_json_file(self, json_file):
         # os.chdir('restapi_app/managers')
-                
+        # real_path = realpath(__file__)
+        # dir_name = dirname(real_path)
+
         mycontent = None
 
         try:
-            myfile = open(path_to_file, 'r')
+            myfile = open(json_file, 'r')
             mycontent = myfile.read()
             file_name = myfile.name
             myfile.close()
-            print("""
-                SUCCESS 
-                 
+            print('-'*60)
+            print(dedent("""
+                SUCCESS
+                
                 File {} was opened and read successfully.
                 
-                """.format(file_name)
+                """.format(file_name))
             )
+            print('-'*60)
         except Exception as error:
-            print("""
+            print('-'*60)
+            print(dedent("""
                 ERROR
                 
                 Error try to open a file.
-                Python said: {}""".format(error)
+                Python said: {}""".format(error))   
             )
+            print('-'*60)
 
         self.show_info2user()
 
         new_content = json.loads(mycontent)
-            
+        
         print('\n TYPE --> {}'.format(type(new_content)))
         print('\n\n')
 
         print('{}'.format(new_content))
-        
-        os.chdir('restapi_app')   # change to app directory
-        
+                
+        os.chdir('../') 
+        os.chdir('../')
+       
         return new_content
 
 
@@ -68,3 +76,5 @@ class ManageAuthentication(object):
         """
         print('{}'.format(info_sol))
         print('\n\n')
+
+

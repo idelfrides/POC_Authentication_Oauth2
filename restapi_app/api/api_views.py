@@ -20,6 +20,7 @@ class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+
 class UserDetails(generics.RetrieveAPIView):
     permission_classes = [
         permissions.IsAuthenticated, 
@@ -27,6 +28,7 @@ class UserDetails(generics.RetrieveAPIView):
     ]
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    
 
 class GroupList(generics.ListAPIView):
     permission_classes = [
@@ -36,3 +38,4 @@ class GroupList(generics.ListAPIView):
     required_scopes = ['groups']
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+

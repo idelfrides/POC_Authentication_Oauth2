@@ -30,7 +30,7 @@ urlpatterns = [
     path('users/', UserList.as_view()),
     path('users/<pk>/', UserDetails.as_view()),
     path('groups/', GroupList.as_view()),
-    # path('token/', get_token, name='url_token'),
+    path('token/', get_token, name='url_token'),
 
     path('api-rest/', include(router.urls)),
     path(
